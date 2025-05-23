@@ -1,11 +1,11 @@
-# NegCosSch
+# Boosting Open Set Recognition Performance through Modulated Representation Learning
 Implementation of the paper:
 Boosting Open Set Recognition Performance through Modulated Representation Learning
 
 
 ## Overview
 
-This repository contains the official implementation for our work on Negative Cosine Temperature Scheduling, a novel approach for Open Set Recognition. We demonstrate that our temperature scheduling can significantly boost both open set and closed set performance if folded into an OSR method. Our code allows for training, evaluation, and reproduction of the key results presented in the paper.
+This repository contains the official implementation for our novel negative cosine temperature scheduling (NegCosSch), a novel approach for Open Set Recognition. We demonstrate that our temperature scheduling can significantly boost both open set and closed set performance if folded into an OSR method. Our code allows for training, evaluation, and reproduction of the key results presented in the paper.
 
 
 ## Basic Usage / Quick Start
