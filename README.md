@@ -11,18 +11,6 @@ A brief (2-3 sentences) overview of your paper and what this codebase achieves. 
 *Example:*
 This repository contains the official implementation for our work on Negative Cosine Temperature Scheduling, a novel approach for Open Set Recognition. We demonstrate that our temperature scheduling can significantly boost both open set and closed set performance over the baseline methods. Our code allows for training, evaluation, and reproduction of the key results presented in the paper.
 
-## Visualization of Results / Method
-
-Here we showcase some key visualizations from our paper that highlight the effectiveness of our method or illustrate its core concept.
-
-| Figure 1: [Short Caption]      | Figure 2: [Short Caption]      |
-| :----------------------------: | :----------------------------: |
-| ![Figure 1 Alt Text](path/to/your/figure1.png) | ![Figure 2 Alt Text](path/to/your/figure2.png) |
-| **Figure 3: [Short Caption]** | **Figure 4: [Short Caption]** |
-| ![Figure 3 Alt Text](path/to/your/figure3.png) | ![Figure 4 Alt Text](path/to/your/figure4.png) |
-
-*(Briefly explain what these figures demonstrate, e.g., "Figure 1 shows a UMAP visualization of learned representations for Dataset X, Figure 2 illustrates the architecture of our proposed model, etc.")*
-
 
 ## Basic Usage / Quick Start
 Our Negative Cosine Scheduling can be integrated into any method using a few lines of code
