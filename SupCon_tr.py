@@ -429,7 +429,7 @@ def train_linear(model,classifier,train_loader,test_loader,out_loader,args):
     torch.cuda.empty_cache()
     train_loss = []
 
-    for epoch in range(args.s_epochs,args.epochs+1):
+    for epoch in range(args.s_epoch,args.epochs+1):
       model.eval()
       classifier.train()
 
