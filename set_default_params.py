@@ -6,7 +6,7 @@ def set_default_forCE(args):
      if(args.N_closed is None):
        args.N_closed = 20
      args.out_num = 180
-     args.seed = 0
+     #args.seed = 0
      args.rand_aug_m = 9
      args.num_workers= 8
   if(args.lr is None):
@@ -73,7 +73,7 @@ def set_default_forSupCon(args):
        if(args.N_closed is None):
           args.N_closed = 20
        args.out_num = 180
-       args.seed = 0
+       #args.seed = 0
        args.rand_aug_m = 9
        args.num_workers= 8
    if(args.lr is None):
