@@ -13,7 +13,7 @@ import torch.nn.functional as F
 import torch.nn as nn
 torch.cuda.empty_cache()
 
-from temp_schedulers import GCosineTemperatureSchedulerM
+from temp_schedulers import GCosineTemperatureSchedulerM, M_NegCosineTemperatureScheduler, LinearScheduler, ExponentialIncreaseScheduler, RandomScheduler, LogarithmicIncreaseScheduler, LinearDecreasingScheduler
 from losses import SupConLoss
 import random
 from schedulers import get_scheduler
@@ -295,8 +295,22 @@ def get_performance_OSR(model,train_loader,test_loader,out_loader,K=100,from_hea
 def train(model,train_loader,test_loader,out_loader,args):
 
     if(args.temperature_scheduling):
+        if(args.temp_scheduler == 'M_NegCos'):
+          TS= M_NegCosineTemperatureScheduler(tau_plus=args.Tp,tau_minus=args.temperature,T=args.T)
         if(args.temp_scheduler=='gcosm'):
           TS= GCosineTemperatureSchedulerM(tau_plus=args.Tp,tau_minus=args.temperature,T=args.T,shift=args.shift)
+        if(args.temp_scheduler in ['random']):
+          TS = RandomScheduler(tau_plus=args.Tp,tau_minus=args.temperature)
+        if(args.temp_scheduler == 'linear'):
+          TS = LinearScheduler(tau_plus=args.Tp,tau_minus=args.temperature)
+        if(args.temp_scheduler == 'exp'):
+          TS = ExponentialIncreaseScheduler(tau_plus=args.Tp,tau_minus=args.temperature)
+        if(args.temp_scheduler == 'log'):
+          TS = LogarithmicIncreaseScheduler(tau_plus=args.Tp,tau_minus=args.temperature)
+        if(args.temp_scheduler == 'lineardecrease'):
+          TS = LinearDecreasingScheduler(tau_plus=args.Tp,tau_minus=args.temperature)
+
+
  
     criterion = SupConLoss(temperature=args.temperature,label_smoothing=args.supcon_label_smoothing,alpha=args.supcon_alpha,num_class=args.N_closed)
     
