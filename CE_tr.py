@@ -268,10 +268,22 @@ def train_CE(model,train_loader,test_loader,out_loader,args):
     if(args.label_smoothing ==None):
         criterion = nn.CrossEntropyLoss()
 
-    if(args.temperature_scheduling):
-       if(args.temp_scheduler=='gcosm'):
-          TS= GCosineTemperatureSchedulerM(tau_plus=args.Tp,tau_minus=args.temperature,T=args.T,shift=args.shift,epochs=args.epochs)
 
+    if(args.temperature_scheduling):
+        if(args.temp_scheduler == 'M_NegCos'):
+          TS= M_NegCosineTemperatureScheduler(tau_plus=args.Tp,tau_minus=args.temperature,T=args.T)
+        if(args.temp_scheduler=='gcosm'):
+          TS= GCosineTemperatureSchedulerM(tau_plus=args.Tp,tau_minus=args.temperature,T=args.T,shift=args.shift)
+        if(args.temp_scheduler in ['random']):
+          TS = RandomScheduler(tau_plus=args.Tp,tau_minus=args.temperature)
+        if(args.temp_scheduler == 'linear'):
+          TS = LinearScheduler(tau_plus=args.Tp,tau_minus=args.temperature)
+        if(args.temp_scheduler == 'exp'):
+          TS = ExponentialIncreaseScheduler(tau_plus=args.Tp,tau_minus=args.temperature)
+        if(args.temp_scheduler == 'log'):
+          TS = LogarithmicIncreaseScheduler(tau_plus=args.Tp,tau_minus=args.temperature)
+        if(args.temp_scheduler == 'lineardecrease'):
+          TS = LinearDecreasingScheduler(tau_plus=args.Tp,tau_minus=args.temperature)
 
     torch.cuda.empty_cache()
     train_loss = []
