@@ -1,6 +1,7 @@
 # Boosting Open Set Recognition Performance through Modulated Representation Learning
 Implementation of the paper:
-Boosting Open Set Recognition Performance through Modulated Representation Learning
+### Boosting Open Set Recognition Performance through Modulated Representation Learning
+Accepted at ICLR 2026 | OpenReview: (https://openreview.net/pdf?id=vpBKry7kL5)
 
 
 ## Overview
@@ -30,15 +31,15 @@ Basic commands to start training are available at bash_scripts
 ### Citation
 
 If you use this code or our paper, please cite:
-
-@inproceedings{vaze2021open,
-  title={Boosting open set recognition performance through modulated representation learning},
-  author={Kundu, Amit Kumar and Patil, Vaishnavi and Jaja, Joseph},
-  booktitle={International conference on learning representations},
-  year={2026}
+<pre>
+@inproceedings{kundu2026boosting,
+    title={Boosting open set recognition performance through modulated representation learning},
+    author={Kundu, Amit Kumar and Patil, Vaishnavi and Jaja, Joseph},
+    booktitle={International conference on learning representations},
+    year={2026}
 }
-
-
+</pre>
+    
 ### Credit
 This implementation is built upon from the following repositories:
 1. [osr_closed_set_all_you_need](https://github.com/sgvaze/osr_closed_set_all_you_need) by Vaze et al. [2022]: data loading pipeline, base model architecture, evaluation
