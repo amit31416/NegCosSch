@@ -6,8 +6,12 @@ Accepted at ICLR 2026 | OpenReview: (https://openreview.net/pdf?id=vpBKry7kL5)
 
 ## Overview
 
-This repository contains the official implementation for our novel negative cosine temperature scheduling (NegCosSch), a novel approach for Open Set Recognition. We demonstrate that our temperature scheduling can significantly boost both open set and closed set performance if folded into an OSR method. Our code allows for training, evaluation, and reproduction of the key results presented in the paper.
 
+This research explores the impact of temperature modulation on representation learning within open-set scenarios. We introduce a suite of novel temperature scheduling (TS) strategies — most notably our Negative Cosine Schedule (NegCosSch).
+
+Our schedules can boost both open set recognition (OSR) and closed set performance for many existing (OSR) loss functions, such as cross-entropy, contrastive, or ARPL loss, with zero computational overhead, providing enhancements irrespective of the OSR scoring rule, model architecture, data augmentations, even on top of label smoothing, with benefits that are more prominently realized as the number of training classes increases.
+
+This repository contains the official implementation of this project. Our code allows for training, evaluation, and reproduction of the key results presented in the paper.
 
 ## Basic Usage / Quick Start
 Our Negative Cosine Scheduling can be integrated into any method using a few lines of code
