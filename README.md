@@ -13,6 +13,9 @@ Our schedules can boost both open set recognition (OSR) and closed set performan
 
 This repository contains the official implementation of this project. Our code allows for training, evaluation, and reproduction of the key results presented in the paper.
 
+<img src="assets/explanation_figure.png" alt="Alt Text" width="600">
+
+
 ## Basic Usage / Quick Start
 Our Negative Cosine Scheduling can be integrated into any method using a few lines of code
 
