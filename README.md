@@ -13,8 +13,9 @@ Our schedules can boost both open set recognition (OSR) and closed set performan
 
 This repository contains the official implementation of this project. Our code allows for training, evaluation, and reproduction of the key results presented in the paper.
 
-<img src="assets/explanation_figure.png" alt="Alt Text" width="600">
+<img src="assets/space_geometry.png" alt="" width="900">
 
+Fig.: Representation spaces for different temperature schedules on Caltech-UCSD-Birds dataset. (a)- (c) representations for constant temperatures ($\tau$). For lower $\tau$, the representations of unknown samples are distributed and so are the representations of known classes, leading to a sharp decision boundary. For higher $\tau$, the representations of known classes are  more compact, making the decision boundary smoother. However, unknown samples overlap with the clusters of known classes. Mid value of $\tau$ achieves a trade-off but does not gain the benefits of both ends. (e)- (g) show representation spaces for our NegCosSch. A lower $\tau$ at the start leads to a coarse decision and the model gradually makes the classes more compact and the unknown representations are pushed away.
 
 ## Basic Usage / Quick Start
 Our Negative Cosine Scheduling can be integrated into any method using a few lines of code
